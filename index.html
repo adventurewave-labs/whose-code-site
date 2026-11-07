@@ -36,23 +36,24 @@ warts and all.</p>
 
 <div class="big">
 <div class="stat"><b>20,245</b><span>commits scanned</span></div>
-<div class="stat"><b>0</b><span>false positives</span></div>
+<div class="stat"><b>0</b><span>commits classed on indirect evidence alone</span></div>
 <div class="stat"><b>208 / 208</b><span>merge commits with review evidence</span></div>
 <div class="stat"><b>658</b><span>gate runs on record</span></div>
 </div>
 
 <table>
-<tr><th>repo</th><th>commits</th><th>assisted</th><th>machine</th><th>unknown</th><th>velocity flags</th><th>merges w/ review evidence</th><th>gate runs</th><th>false positives</th></tr>
+<tr><th>repo</th><th>commits</th><th>assisted</th><th>machine</th><th>unknown</th><th>velocity flags</th><th>merges w/ review evidence</th><th>gate runs</th><th>classed w/o confession</th></tr>
 <tr><td>turbo-rig</td><td class="num">18,282</td><td class="num">0</td><td class="num">0</td><td class="num">18,282</td><td class="num">0</td><td class="num">95 / 95</td><td class="num">370</td><td class="num">0</td></tr>
 <tr><td>ancuria</td><td class="num">1,820</td><td class="num">37</td><td class="num">0</td><td class="num">1,783</td><td class="num">152</td><td class="num">102 / 102</td><td class="num">255</td><td class="num">0</td></tr>
 <tr><td>adventure-wave-explorer</td><td class="num">143</td><td class="num">0</td><td class="num">4</td><td class="num">139</td><td class="num">0</td><td class="num">11 / 11</td><td class="num">33</td><td class="num">0</td></tr>
 </table>
 
 <h2>What the numbers actually say</h2>
-<p><b>Ancuria shows what a confession looks like.</b> 958 commits carry direct
-machine evidence, mostly <code>Co-Authored-By: Claude</code> trailers the agent
-left behind, and the velocity signal flagged 152 commits on days that broke the
-author's own rhythm. Those are honest fingerprints, counted, not hidden.</p>
+<p><b>Ancuria shows what a confession looks like.</b> 37 commits are classified
+<b>assisted</b> from direct <code>Co-Authored-By: Claude</code> trailers the
+agent left behind, and the velocity signal flagged 152 commits on days that
+broke the author's own rhythm. Those are honest fingerprints, counted, not
+hidden.</p>
 <p><b>Turbo-rig shows the hole the industry is standing over.</b> 18,282 commits
 and effectively no machine evidence at all, because its history was written
 before agent tools started signing their work. The scanner says <b>unknown</b>
@@ -60,10 +61,11 @@ on all of it, and unknown is the truthful answer: a repository without trail
 artifacts cannot prove anything about who wrote it or who approved it. That is
 not a defect in the scanner. That is the multi-billion-dollar problem the whole
 category is about to collide with.</p>
-<p><b>Zero false positives, stated precisely.</b> No commit was classified
-assisted or machine at deciding confidence without a direct confession. That
-proves indirect signals never decided a class on our code. It does not claim
-every classification is accurate, and the report itself says so.</p>
+<p><b>The zero, stated precisely.</b> No commit was classified assisted or
+machine at deciding confidence unless it carried a direct confession — on our
+repos, under this method. That is what a zero here can prove: indirect signals
+never decided a class. It is not a general accuracy guarantee, and the report
+itself says so.</p>
 
 <h2>The method</h2>
 <p>Version 0.2, stamped on every report: commit trailers naming known AI
