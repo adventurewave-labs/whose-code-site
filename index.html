@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>whose-code — we scanned ourselves first</title>
+<meta name="description" content="20,245 commits of real agent-built code, audited by our own authorship scanner. The numbers, the method, and what the unknown bucket means.">
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:#1a1a1a;background:#fafafa;line-height:1.6}
+main{max-width:46rem;margin:0 auto;padding:2.5rem 1.25rem 4rem}
+h1{font-size:2rem;line-height:1.2;margin:.5rem 0 1rem}
+h2{font-size:1.15rem;margin-top:2.5rem}
+.tag{display:inline-block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#0a7d32;border:1px solid #0a7d32;border-radius:99px;padding:.15rem .7rem;margin-bottom:1rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.85rem}
+td,th{border:1px solid #ddd;padding:.45rem .6rem;text-align:left}
+th{background:#eee}
+.num{font-variant-numeric:tabular-nums}
+.big{display:flex;gap:1.5rem;flex-wrap:wrap;margin:1.5rem 0}
+.stat{flex:1 1 9rem;border:1px solid #ddd;border-radius:.5rem;padding:.9rem 1rem;background:#fff}
+.stat b{display:block;font-size:1.6rem;font-variant-numeric:tabular-nums}
+.stat span{font-size:.8rem;color:#555}
+p{margin:.8rem 0}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid #ccc;font-size:.8rem;color:#555}
+code{background:#eee;padding:.1rem .3rem;border-radius:3px;font-size:.85em}
+a{color:#0a5bd3}
+</style>
+</head>
+<body>
+<main>
+<span class="tag">Case study</span>
+<h1>We scanned ourselves first.</h1>
+<p>Our own code is written by agent fleets. So before we asked anyone to trust
+our authorship scanner, we pointed it at every repo we run: <b>20,245 commits</b>
+of real, shipping, agent-built software. Here is the complete result, published
+warts and all.</p>
+
+<div class="big">
+<div class="stat"><b>20,245</b><span>commits scanned</span></div>
+<div class="stat"><b>0</b><span>false positives</span></div>
+<div class="stat"><b>208 / 208</b><span>merge commits with review evidence</span></div>
+<div class="stat"><b>658</b><span>gate runs on record</span></div>
+</div>
+
+<table>
+<tr><th>repo</th><th>commits</th><th>assisted</th><th>machine</th><th>unknown</th><th>velocity flags</th><th>merges w/ review evidence</th><th>gate runs</th><th>false positives</th></tr>
+<tr><td>turbo-rig</td><td class="num">18,282</td><td class="num">0</td><td class="num">0</td><td class="num">18,282</td><td class="num">0</td><td class="num">95 / 95</td><td class="num">370</td><td class="num">0</td></tr>
+<tr><td>ancuria</td><td class="num">1,820</td><td class="num">37</td><td class="num">0</td><td class="num">1,783</td><td class="num">152</td><td class="num">102 / 102</td><td class="num">255</td><td class="num">0</td></tr>
+<tr><td>adventure-wave-explorer</td><td class="num">143</td><td class="num">0</td><td class="num">4</td><td class="num">139</td><td class="num">0</td><td class="num">11 / 11</td><td class="num">33</td><td class="num">0</td></tr>
+</table>
+
+<h2>What the numbers actually say</h2>
+<p><b>Ancuria shows what a confession looks like.</b> 958 commits carry direct
+machine evidence, mostly <code>Co-Authored-By: Claude</code> trailers the agent
+left behind, and the velocity signal flagged 152 commits on days that broke the
+author's own rhythm. Those are honest fingerprints, counted, not hidden.</p>
+<p><b>Turbo-rig shows the hole the industry is standing over.</b> 18,282 commits
+and effectively no machine evidence at all, because its history was written
+before agent tools started signing their work. The scanner says <b>unknown</b>
+on all of it, and unknown is the truthful answer: a repository without trail
+artifacts cannot prove anything about who wrote it or who approved it. That is
+not a defect in the scanner. That is the multi-billion-dollar problem the whole
+category is about to collide with.</p>
+<p><b>Zero false positives, stated precisely.</b> No commit was classified
+assisted or machine at deciding confidence without a direct confession. That
+proves indirect signals never decided a class on our code. It does not claim
+every classification is accurate, and the report itself says so.</p>
+
+<h2>The method</h2>
+<p>Version 0.2, stamped on every report: commit trailers naming known AI
+identities, bot accounts, review artifacts, and velocity outliers. Classes are
+<b>assisted / machine / unknown</b>. There is no "human" class by design: a
+commit message can prove machine involvement, never human authorship. Every
+record is cross-checked against git's own authoritative history, and anything
+the scanner cannot read fails the scan instead of guessing.</p>
+<p>The scan itself was gated the same way we gate everything: an independent
+reviewer, 14 rounds on the scanner, 12 on the validation receipt, every finding
+fixed with a regression test before a human merged.</p>
+
+<h2>What this is for</h2>
+<p>Gartner says 70% of enterprises will abandon vendor-built agentic AI by 2028.
+The reason nobody puts in the forecast: buyers may not own what they paid for,
+and they cannot prove the human part either. The answer is evidence, produced
+while the work happens. We built the scanner to audit it, and we built the trail
+layer to produce it. We ran both on ourselves before showing either to anyone.</p>
+<p><b>whose-code is in private beta.</b> The case study is public; the tool is
+available to pilot teams, diligence firms, and agencies who need to answer the
+ownership question before a buyer asks it. Pilot invitations go out through the
+<a href="https://github.com/adventurewave-labs">adventurewave-labs</a> GitHub org.</p>
+
+<footer>
+Numbers generated by the whose-code estate validation run (method v0.2) against
+three production repositories, receipt committed at
+<code>docs/ESTATE-VALIDATION.md</code> in the private scanner repo. Educational
+case study, not legal advice. Last updated November 2026.
+</footer>
+</main>
+</body>
+</html>
