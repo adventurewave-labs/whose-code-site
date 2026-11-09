@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adventurewave-labs.github.io/whose-code-site/sitemap.xml
