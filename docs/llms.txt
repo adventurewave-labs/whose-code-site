@@ -1,0 +1,10 @@
+# whose-code-site
+
+> Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner. Zero commits classed without a direct confession.
+
+whose-code-site is maintained by Adventure Wave Labs (The lab for agentic developer tooling).
+
+## Links
+
+- [Landing page](https://adventurewave-labs.github.io/whose-code-site/): overview, features, FAQ
+- [Source code](https://github.com/adventurewave-labs/whose-code-site): README, issues, releases
