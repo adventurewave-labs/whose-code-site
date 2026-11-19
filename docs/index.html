@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>whose-code — we scanned ourselves first</title>
+<meta name="description" content="20,245 commits of real agent-built code, audited by our own authorship scanner. The numbers, the method, and what the unknown bucket means.">
+<link rel="canonical" href="https://adventurewave-labs.github.io/whose-code-site/">
+<meta property="og:title" content="whose-code — we scanned ourselves first">
+<meta property="og:description" content="20,245 commits of real agent-built code, audited by our own authorship scanner. The numbers, the method, and what the unknown bucket means.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adventurewave-labs.github.io/whose-code-site/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="whose-code — we scanned ourselves first">
+<meta name="twitter:description" content="20,245 commits of real agent-built code, audited by our own authorship scanner. The numbers, the method, and what the unknown bucket means.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='#38bdf8' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='#fbbf24'/%3E%3C/svg%3E">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#070b10;--ink:#e9eef5;--mut:#8fa0b4;--a1:#38bdf8;--a2:#fbbf24;--card:rgba(255,255,255,.035);--line:rgba(255,255,255,.09)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+code,pre,.mono{font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace}
+.nav{position:sticky;top:0;z-index:9;display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;font-weight:650;letter-spacing:.2px;font-size:15px}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--a1);box-shadow:0 0 10px var(--a1);animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.45}}
+.nav nav{display:flex;gap:8px;align-items:center}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border:1px solid var(--line);border-radius:9px;font-size:13.5px;font-weight:560;color:var(--ink);transition:border-color .18s,transform .18s,background .18s;background:transparent}
+.btn:hover{border-color:var(--a1);transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(135deg,var(--a1),var(--a2));border:none;color:#04121a;font-weight:700}
+.btn.primary:hover{filter:brightness(1.1)}
+.hero{position:relative;min-height:clamp(420px,58vh,560px);display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center}
+.hero-art{position:absolute;inset:0}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-inner{position:relative;z-index:2;max-width:880px;padding:56px 26px 40px}
+.eyebrow{font-family:ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--a1);opacity:.92}
+h1{font-size:clamp(40px,7vw,68px);font-weight:800;letter-spacing:-1px;margin:10px 0 14px;background:linear-gradient(100deg,var(--a1) 0%,#fff 52%,var(--a2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{font-size:clamp(16px,2.3vw,19.5px);color:var(--mut);max-width:720px;margin:0 auto 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:26px}
+.chip{font-family:ui-monospace,Menlo,monospace;font-size:12px;padding:4px 11px;border:1px solid var(--line);border-radius:99px;color:var(--mut);background:rgba(255,255,255,.02)}
+.chip:hover{color:var(--a1);border-color:var(--a1)}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.stats{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:13px;color:var(--mut)}
+.stats b{color:var(--ink);font-weight:640}
+.lang-dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:baseline}
+main{max-width:1020px;margin:0 auto;padding:26px 26px 40px}
+section{margin:44px 0}
+h2{font-size:14px;font-family:ui-monospace,Menlo,monospace;letter-spacing:2.5px;text-transform:uppercase;color:var(--a1);margin-bottom:20px}
+h2::before{content:'// ';color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--a1) 55%,var(--line))}
+.card h3{font-size:16px;margin-bottom:9px;color:var(--ink)}
+.card p{font-size:13.8px;color:var(--mut)}
+.install pre{background:#0a0f16;border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;overflow:auto}
+.install code{font-size:14px;color:var(--a1);white-space:nowrap}
+.install .copy{border:1px solid var(--line);background:transparent;color:var(--mut);border-radius:8px;padding:6px 12px;font-size:12px;cursor:pointer;transition:all .15s;flex-shrink:0}
+.install .copy:hover{color:var(--a1);border-color:var(--a1)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.links a{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border:1px solid var(--line);border-radius:11px;font-size:13.5px;background:var(--card);transition:border-color .15s,transform .15s}
+.links a:hover{border-color:var(--a1);transform:translateX(3px)}
+.links a span.arr{color:var(--a1)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:720px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+thead th{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--mut);background:rgba(255,255,255,.03)}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{font-variant-numeric:tabular-nums;text-align:right}
+section p code{background:rgba(255,255,255,.06);padding:.1rem .3rem;border-radius:3px;font-size:.9em}
+section p a{color:var(--a1)}
+footer{border-top:1px solid var(--line);padding:30px 26px 44px;text-align:center;color:var(--mut);font-size:13px}
+footer .orgs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+footer a:hover{color:var(--a1)}
+@media(max-width:640px){.nav{padding:12px 16px}.hero-inner{padding:44px 18px 32px}.stats{gap:14px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition:none !important}}
+</style>
+<style>details{border:1px solid var(--line);border-radius:11px;padding:14px 18px;background:var(--card)}details+details{margin-top:10px}summary{cursor:pointer;font-weight:600;font-size:14.5px}summary:hover{color:var(--a1)}details p{margin-top:10px;font-size:13.8px;color:var(--mut)}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareSourceCode", "name": "whose-code-site", "description": "Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner — no commit classed on indirect evidence alone.", "url": "https://adventurewave-labs.github.io/whose-code-site/", "codeRepository": "https://github.com/adventurewave-labs/whose-code-site", "programmingLanguage": "HTML", "keywords": "agentic-ai, ai-agents, authorship, case-study, code-audit, copyright, developer-tools, git-analytics, html", "author": {"@type": "Organization", "name": "Adventure Wave Labs", "url": "https://github.com/adventurewave-labs"}, "maintainer": {"@type": "Organization", "name": "Adventure Wave Labs", "url": "https://github.com/adventurewave-labs"}, "dateModified": "2026-11-19", "isAccessibleForFree": true, "license": "https://github.com/adventurewave-labs/whose-code-site/blob/HEAD/LICENSE"}, {"@type": "WebSite", "name": "whose-code — we scanned ourselves first", "url": "https://adventurewave-labs.github.io/whose-code-site/", "publisher": {"@type": "Organization", "name": "Adventure Wave Labs"}}, {"@type": "Organization", "name": "Adventure Wave Labs", "url": "https://github.com/adventurewave-labs", "description": "The lab for agentic developer tooling"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is whose-code?", "acceptedAnswer": {"@type": "Answer", "text": "An authorship scanner for agent-built code. It classifies commits as assisted, machine, or unknown using direct confessions and trail artifacts — never guessed authorship. It is in private beta; pilot invitations go out through the adventurewave-labs GitHub org."}}, {"@type": "Question", "name": "What does the zero mean?", "acceptedAnswer": {"@type": "Answer", "text": "No commit was classified assisted or machine at deciding confidence without a direct confession — on these repos, under this method. It proves indirect signals never decided a class. It is not a general accuracy guarantee."}}, {"@type": "Question", "name": "Where do the numbers come from?", "acceptedAnswer": {"@type": "Answer", "text": "The estate validation run (method v0.2) against three production repositories — turbo-rig, ancuria, and adventure-wave-explorer. The receipt is committed at docs/ESTATE-VALIDATION.md in the private scanner repo."}}]}</script>
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="dot"></span>whose-code-site</div>
+  <nav>
+    <a class="btn" href="https://github.com/adventurewave-labs">Adventure Wave Labs</a>
+    <a class="btn primary" href="https://github.com/adventurewave-labs/whose-code-site">GitHub ↗</a>
+  </nav>
+</header>
+<section class="hero">
+<div class="hero-art">
+<svg viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<radialGradient id="lamp" cx="0.5" cy="0.4" r="0.7"><stop offset="0" stop-color="#38bdf8" stop-opacity="0.22"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>
+<linearGradient id="fade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#070b10" stop-opacity="0"/><stop offset="1" stop-color="#070b10"/></linearGradient>
+<filter id="gl"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect width="1200" height="420" fill="#070b10"/>
+<rect width="1200" height="420" fill="url(#lamp)"><animate attributeName="opacity" values="0.7;1;0.7" dur="10s" repeatCount="indefinite"/></rect>
+<g stroke="#38bdf8" stroke-opacity="0.08"><line x1="0" y1="60" x2="0" y2="330"/><line x1="60" y1="60" x2="60" y2="330"/><line x1="120" y1="60" x2="120" y2="330"/><line x1="180" y1="60" x2="180" y2="330"/><line x1="240" y1="60" x2="240" y2="330"/><line x1="300" y1="60" x2="300" y2="330"/><line x1="360" y1="60" x2="360" y2="330"/><line x1="420" y1="60" x2="420" y2="330"/><line x1="480" y1="60" x2="480" y2="330"/><line x1="540" y1="60" x2="540" y2="330"/><line x1="600" y1="60" x2="600" y2="330"/><line x1="660" y1="60" x2="660" y2="330"/><line x1="720" y1="60" x2="720" y2="330"/><line x1="780" y1="60" x2="780" y2="330"/><line x1="840" y1="60" x2="840" y2="330"/><line x1="900" y1="60" x2="900" y2="330"/><line x1="960" y1="60" x2="960" y2="330"/><line x1="1020" y1="60" x2="1020" y2="330"/><line x1="1080" y1="60" x2="1080" y2="330"/><line x1="1140" y1="60" x2="1140" y2="330"/><line x1="1200" y1="60" x2="1200" y2="330"/><line x1="0" y1="80" x2="1200" y2="80"/><line x1="0" y1="130" x2="1200" y2="130"/><line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="230" x2="1200" y2="230"/><line x1="0" y1="280" x2="1200" y2="280"/><line x1="0" y1="330" x2="1200" y2="330"/></g>
+<path d="M0 150 L0 229 L50 150 L100 229 L150 150 L200 229 L250 150 L300 229 L350 150 L400 229 L450 150 L500 229 L550 150 L600 229 L650 150 L700 229 L750 150 L800 229 L850 150 L900 229 L950 150 L1000 229 L1050 150 L1100 229 L1150 150 L1200 229" fill="none" stroke="#38bdf8" stroke-width="2" filter="url(#gl)"><animate attributeName="d" values="M0 150 L0 229 L50 150 L100 229 L150 150 L200 229 L250 150 L300 229 L350 150 L400 229 L450 150 L500 229 L550 150 L600 229 L650 150 L700 229 L750 150 L800 229 L850 150 L900 229 L950 150 L1000 229 L1050 150 L1100 229 L1150 150 L1200 229;M0 150 L0 159 L50 150 L100 159 L150 150 L200 159 L250 150 L300 159 L350 150 L400 159 L450 150 L500 159 L550 150 L600 159 L650 150 L700 159 L750 150 L800 159 L850 150 L900 159 L950 150 L1000 159 L1050 150 L1100 159 L1150 150 L1200 159;M0 150 L0 229 L50 150 L100 229 L150 150 L200 229 L250 150 L300 229 L350 150 L400 229 L450 150 L500 229 L550 150 L600 229 L650 150 L700 229 L750 150 L800 229 L850 150 L900 229 L950 150 L1000 229 L1050 150 L1100 229 L1150 150 L1200 229" dur="7s" repeatCount="indefinite"/></path>
+<path d="M0 190 L0 202 L50 190 L100 202 L150 190 L200 202 L250 190 L300 202 L350 190 L400 202 L450 190 L500 202 L550 190 L600 202 L650 190 L700 202 L750 190 L800 202 L850 190 L900 202 L950 190 L1000 202 L1050 190 L1100 202 L1150 190 L1200 202" fill="none" stroke="#fbbf24" stroke-width="1.6" opacity="0.8"><animate attributeName="d" values="M0 190 L0 202 L50 190 L100 202 L150 190 L200 202 L250 190 L300 202 L350 190 L400 202 L450 190 L500 202 L550 190 L600 202 L650 190 L700 202 L750 190 L800 202 L850 190 L900 202 L950 190 L1000 202 L1050 190 L1100 202 L1150 190 L1200 202;M0 190 L0 238 L50 190 L100 238 L150 190 L200 238 L250 190 L300 238 L350 190 L400 238 L450 190 L500 238 L550 190 L600 238 L650 190 L700 238 L750 190 L800 238 L850 190 L900 238 L950 190 L1000 238 L1050 190 L1100 238 L1150 190 L1200 238;M0 190 L0 202 L50 190 L100 202 L150 190 L200 202 L250 190 L300 202 L350 190 L400 202 L450 190 L500 202 L550 190 L600 202 L650 190 L700 202 L750 190 L800 202 L850 190 L900 202 L950 190 L1000 202 L1050 190 L1100 202 L1150 190 L1200 202" dur="9s" begin="-3s" repeatCount="indefinite"/></path>
+<path d="M0 230 L0 255 L50 230 L100 255 L150 230 L200 255 L250 230 L300 255 L350 230 L400 255 L450 230 L500 255 L550 230 L600 255 L650 230 L700 255 L750 230 L800 255 L850 230 L900 255 L950 230 L1000 255 L1050 230 L1100 255 L1150 230 L1200 255" fill="none" stroke="#38bdf8" stroke-width="1.2" opacity="0.45"><animate attributeName="d" values="M0 230 L0 255 L50 230 L100 255 L150 230 L200 255 L250 230 L300 255 L350 230 L400 255 L450 230 L500 255 L550 230 L600 255 L650 230 L700 255 L750 230 L800 255 L850 230 L900 255 L950 230 L1000 255 L1050 230 L1100 255 L1150 230 L1200 255;M0 230 L0 241 L50 230 L100 241 L150 230 L200 241 L250 230 L300 241 L350 230 L400 241 L450 230 L500 241 L550 230 L600 241 L650 230 L700 241 L750 230 L800 241 L850 230 L900 241 L950 230 L1000 241 L1050 230 L1100 241 L1150 230 L1200 241;M0 230 L0 255 L50 230 L100 255 L150 230 L200 255 L250 230 L300 255 L350 230 L400 255 L450 230 L500 255 L550 230 L600 255 L650 230 L700 255 L750 230 L800 255 L850 230 L900 255 L950 230 L1000 255 L1050 230 L1100 255 L1150 230 L1200 255" dur="11s" begin="-6s" repeatCount="indefinite"/></path>
+<rect x="30" y="330" width="10" rx="2" height="9" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="9;41;9" dur="1.9s" begin="-1.3s" repeatCount="indefinite"/><animate attributeName="y" values="330;298;330" dur="1.9s" begin="-1.3s" repeatCount="indefinite"/></rect><rect x="76" y="330" width="10" rx="2" height="30" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="30;104;30" dur="1.6s" begin="-0.6s" repeatCount="indefinite"/><animate attributeName="y" values="330;256;330" dur="1.6s" begin="-0.6s" repeatCount="indefinite"/></rect><rect x="122" y="330" width="10" rx="2" height="24" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="24;86;24" dur="2.8s" begin="-1.0s" repeatCount="indefinite"/><animate attributeName="y" values="330;268;330" dur="2.8s" begin="-1.0s" repeatCount="indefinite"/></rect><rect x="168" y="330" width="10" rx="2" height="18" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="18;68;18" dur="1.4s" begin="-1.2s" repeatCount="indefinite"/><animate attributeName="y" values="330;280;330" dur="1.4s" begin="-1.2s" repeatCount="indefinite"/></rect><rect x="214" y="330" width="10" rx="2" height="24" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="24;86;24" dur="2.0s" begin="-1.0s" repeatCount="indefinite"/><animate attributeName="y" values="330;268;330" dur="2.0s" begin="-1.0s" repeatCount="indefinite"/></rect><rect x="260" y="330" width="10" rx="2" height="10" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="10;44;10" dur="2.4s" begin="-1.4s" repeatCount="indefinite"/><animate attributeName="y" values="330;296;330" dur="2.4s" begin="-1.4s" repeatCount="indefinite"/></rect><rect x="306" y="330" width="10" rx="2" height="9" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="9;41;9" dur="1.9s" begin="-1.7s" repeatCount="indefinite"/><animate attributeName="y" values="330;298;330" dur="1.9s" begin="-1.7s" repeatCount="indefinite"/></rect><rect x="352" y="330" width="10" rx="2" height="9" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="9;41;9" dur="2.3s" begin="-0.5s" repeatCount="indefinite"/><animate attributeName="y" values="330;298;330" dur="2.3s" begin="-0.5s" repeatCount="indefinite"/></rect><rect x="398" y="330" width="10" rx="2" height="23" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="23;83;23" dur="2.3s" begin="-0.1s" repeatCount="indefinite"/><animate attributeName="y" values="330;270;330" dur="2.3s" begin="-0.1s" repeatCount="indefinite"/></rect><rect x="444" y="330" width="10" rx="2" height="24" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="24;86;24" dur="1.8s" begin="-1.2s" repeatCount="indefinite"/><animate attributeName="y" values="330;268;330" dur="1.8s" begin="-1.2s" repeatCount="indefinite"/></rect><rect x="490" y="330" width="10" rx="2" height="28" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="28;98;28" dur="2.2s" begin="-0.8s" repeatCount="indefinite"/><animate attributeName="y" values="330;260;330" dur="2.2s" begin="-0.8s" repeatCount="indefinite"/></rect><rect x="536" y="330" width="10" rx="2" height="11" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="11;47;11" dur="1.9s" begin="-1.7s" repeatCount="indefinite"/><animate attributeName="y" values="330;294;330" dur="1.9s" begin="-1.7s" repeatCount="indefinite"/></rect><rect x="582" y="330" width="10" rx="2" height="16" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="16;62;16" dur="2.6s" begin="-0.8s" repeatCount="indefinite"/><animate attributeName="y" values="330;284;330" dur="2.6s" begin="-0.8s" repeatCount="indefinite"/></rect><rect x="628" y="330" width="10" rx="2" height="10" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="10;44;10" dur="2.8s" begin="-1.8s" repeatCount="indefinite"/><animate attributeName="y" values="330;296;330" dur="2.8s" begin="-1.8s" repeatCount="indefinite"/></rect><rect x="674" y="330" width="10" rx="2" height="13" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="13;53;13" dur="1.9s" begin="-0.5s" repeatCount="indefinite"/><animate attributeName="y" values="330;290;330" dur="1.9s" begin="-0.5s" repeatCount="indefinite"/></rect><rect x="720" y="330" width="10" rx="2" height="30" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="30;104;30" dur="2.8s" begin="-0.2s" repeatCount="indefinite"/><animate attributeName="y" values="330;256;330" dur="2.8s" begin="-0.2s" repeatCount="indefinite"/></rect><rect x="766" y="330" width="10" rx="2" height="20" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="20;74;20" dur="2.8s" begin="-0.2s" repeatCount="indefinite"/><animate attributeName="y" values="330;276;330" dur="2.8s" begin="-0.2s" repeatCount="indefinite"/></rect><rect x="812" y="330" width="10" rx="2" height="17" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="17;65;17" dur="2.3s" begin="-0.5s" repeatCount="indefinite"/><animate attributeName="y" values="330;282;330" dur="2.3s" begin="-0.5s" repeatCount="indefinite"/></rect><rect x="858" y="330" width="10" rx="2" height="18" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="18;68;18" dur="1.6s" begin="-0.2s" repeatCount="indefinite"/><animate attributeName="y" values="330;280;330" dur="1.6s" begin="-0.2s" repeatCount="indefinite"/></rect><rect x="904" y="330" width="10" rx="2" height="9" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="9;41;9" dur="2.3s" begin="-0.1s" repeatCount="indefinite"/><animate attributeName="y" values="330;298;330" dur="2.3s" begin="-0.1s" repeatCount="indefinite"/></rect><rect x="950" y="330" width="10" rx="2" height="14" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="14;56;14" dur="2.4s" begin="-0.2s" repeatCount="indefinite"/><animate attributeName="y" values="330;288;330" dur="2.4s" begin="-0.2s" repeatCount="indefinite"/></rect><rect x="996" y="330" width="10" rx="2" height="19" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="19;71;19" dur="1.7s" begin="-0.7s" repeatCount="indefinite"/><animate attributeName="y" values="330;278;330" dur="1.7s" begin="-0.7s" repeatCount="indefinite"/></rect><rect x="1042" y="330" width="10" rx="2" height="16" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="16;62;16" dur="2.6s" begin="-0.4s" repeatCount="indefinite"/><animate attributeName="y" values="330;284;330" dur="2.6s" begin="-0.4s" repeatCount="indefinite"/></rect><rect x="1088" y="330" width="10" rx="2" height="13" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="13;53;13" dur="2.9s" begin="-1.1s" repeatCount="indefinite"/><animate attributeName="y" values="330;290;330" dur="2.9s" begin="-1.1s" repeatCount="indefinite"/></rect><rect x="1134" y="330" width="10" rx="2" height="19" fill="#fbbf24" opacity="0.5"><animate attributeName="height" values="19;71;19" dur="2.5s" begin="-1.1s" repeatCount="indefinite"/><animate attributeName="y" values="330;278;330" dur="2.5s" begin="-1.1s" repeatCount="indefinite"/></rect>
+<line x1="0" y1="330" x2="1200" y2="330" stroke="#38bdf8" stroke-opacity="0.5" stroke-width="1.3"/>
+<circle r="3.5" cx="0" cy="150" fill="#38bdf8" filter="url(#gl)"><animate attributeName="cx" values="0;1200" dur="5s" repeatCount="indefinite"/></circle>
+<rect y="330" width="1200" height="90" fill="url(#fade)"/>
+</svg></div>
+<div class="hero-inner">
+  <div class="eyebrow">adventurewave-labs</div>
+  <h1>We scanned ourselves first.</h1>
+  <p class="tagline">Our own code is written by agent fleets. So before we asked anyone to trust our authorship scanner, we pointed it at every repo we run: <b>20,245 commits</b> of real, shipping, agent-built software — the complete result, published warts and all.</p>
+  <div class="chips"><span class="chip">agentic-ai</span><span class="chip">ai-agents</span><span class="chip">authorship</span><span class="chip">case-study</span><span class="chip">code-audit</span><span class="chip">copyright</span><span class="chip">developer-tools</span><span class="chip">git-analytics</span><span class="chip">html</span></div>
+  <div class="cta"><a class="btn primary" href="#receipt">Read the receipt ↓</a><a class="btn" href="https://github.com/adventurewave-labs/whose-code-site">Source ↗</a></div>
+  <div class="stats"><span><span class="lang-dot" style="background:#e34c26"></span><b>HTML</b></span><span>method <b>v0.2</b></span><span>last updated <b>November 2026</b></span></div>
+</div>
+</section>
+<main>
+<section id="about"><h2>The receipt, at a glance</h2><div class="cards">
+<div class="card"><h3>20,245</h3><p>commits of our own agent-built code, scanned — every repo we run, warts and all.</p></div>
+<div class="card"><h3>0</h3><p>commits classed on indirect evidence alone. The precise claim is below — it is not "every commit confessed."</p></div>
+<div class="card"><h3>208 / 208</h3><p>merge commits carry review evidence — the human ruling is on record.</p></div>
+<div class="card"><h3>658</h3><p>gate runs on record — the work was gated the same way it ships.</p></div>
+</div></section>
+
+<section id="receipt"><h2>The receipt (method v0.2)</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>repo</th><th class="num">commits</th><th class="num">assisted</th><th class="num">machine</th><th class="num">unknown</th><th class="num">velocity flags</th><th class="num">merges w/ review evidence</th><th class="num">gate runs</th><th class="num">classed w/o confession</th></tr></thead>
+<tbody>
+<tr><td>turbo-rig</td><td class="num">18,282</td><td class="num">0</td><td class="num">0</td><td class="num">18,282</td><td class="num">0</td><td class="num">95 / 95</td><td class="num">370</td><td class="num">0</td></tr>
+<tr><td>ancuria</td><td class="num">1,820</td><td class="num">37</td><td class="num">0</td><td class="num">1,783</td><td class="num">152</td><td class="num">102 / 102</td><td class="num">255</td><td class="num">0</td></tr>
+<tr><td>adventure-wave-explorer</td><td class="num">143</td><td class="num">0</td><td class="num">4</td><td class="num">139</td><td class="num">0</td><td class="num">11 / 11</td><td class="num">33</td><td class="num">0</td></tr>
+</tbody></table></div>
+<p>Generated by the estate validation run against three production repositories; the receipt is committed at <code>docs/ESTATE-VALIDATION.md</code> in the <a href="https://github.com/adventurewave-labs/whose-code">whose-code</a> scanner repo (private, pilot-stage). Educational case study, not legal advice.</p>
+</section>
+
+<section id="numbers">
+<h2>What the numbers actually say</h2>
+<p><b>Ancuria shows what a confession looks like.</b> 37 commits are classified <b>assisted</b> from direct <code>Co-Authored-By: Claude</code> trailers the agent left behind, and the velocity signal flagged 152 commits on days that broke the author's own rhythm. Those are honest fingerprints, counted, not hidden.</p>
+<p><b>Turbo-rig shows the hole the industry is standing over.</b> 18,282 commits and effectively no machine evidence at all, because its history was written before agent tools started signing their work. The scanner says <b>unknown</b> on all of it, and unknown is the truthful answer: a repository without trail artifacts cannot prove anything about who wrote it or who approved it. That is not a defect in the scanner. That is the multi-billion-dollar problem the whole category is about to collide with.</p>
+<p><b>The zero, stated precisely.</b> No commit was classified assisted or machine at deciding confidence unless it carried a direct confession — on our repos, under this method. That is what a zero here can prove: indirect signals never decided a class. It is not a general accuracy guarantee, and the report itself says so.</p>
+</section>
+
+<section id="method">
+<h2>The method</h2>
+<p>Version 0.2, stamped on every report: commit trailers naming known AI identities, bot accounts, review artifacts, and velocity outliers. Classes are <b>assisted / machine / unknown</b>. There is no "human" class by design: a commit message can prove machine involvement, never human authorship. Every record is cross-checked against git's own authoritative history, and anything the scanner cannot read fails the scan instead of guessing.</p>
+<p>The scan itself was gated the same way we gate everything: an independent reviewer, 14 rounds on the scanner, 12 on the validation receipt, every finding fixed with a regression test before a human merged.</p>
+</section>
+
+<section id="why">
+<h2>What this is for</h2>
+<p>Gartner says 70% of enterprises will abandon agentic AI built by vendor forward-deployed engineering by 2028 (<a href="https://www.gartner.com/en/newsroom/press-releases/2026-09-29-gartner-predicts-70-percent-of-enterprises-will-abandon-agentic-ai-built-by-vendor-forward-deployed-engineering-by-2028">press release</a>). The reason nobody puts in the forecast: buyers may not own what they paid for, and they cannot prove the human part either. The answer is evidence, produced while the work happens. We built the scanner to audit it, and we built the trail layer to produce it. We ran both on ourselves before showing either to anyone.</p>
+<p><b>whose-code is in private beta.</b> The case study is public; the tool is available to pilot teams, diligence firms, and agencies who need to answer the ownership question before a buyer asks it. Pilot invitations go out through the <a href="https://github.com/adventurewave-labs">adventurewave-labs</a> GitHub org.</p>
+</section>
+
+<section id="faq"><h2>FAQ</h2><div class="faq">
+<details><summary>What is whose-code?</summary><p>An authorship scanner for agent-built code. It classifies commits as assisted, machine, or unknown using direct confessions and trail artifacts — never guessed authorship. It is in private beta; pilot invitations go out through the adventurewave-labs GitHub org.</p></details>
+<details><summary>What does the zero mean?</summary><p>No commit was classified assisted or machine at deciding confidence without a direct confession — on these repos, under this method. It proves indirect signals never decided a class. It is not a general accuracy guarantee.</p></details>
+<details><summary>Where do the numbers come from?</summary><p>The estate validation run (method v0.2) against three production repositories — turbo-rig, ancuria, and adventure-wave-explorer. The receipt is committed at docs/ESTATE-VALIDATION.md in the private scanner repo.</p></details>
+</div></section>
+<section id="more"><h2>Explore</h2><div class="links">
+<a href="https://github.com/adventurewave-labs/whose-code-site#readme">README <span class="arr">→</span></a>
+<a href="https://github.com/adventurewave-labs/whose-code-site/issues">Issues <span class="arr">→</span></a>
+<a href="https://github.com/adventurewave-labs/whose-code">whose-code scanner <span class="arr">→</span></a>
+<a href="https://github.com/adventurewave-labs/whose-code-site/blob/HEAD/LICENSE">License <span class="arr">→</span></a>
+</div></section>
+</main>
+<footer>
+<div class="orgs">
+<a href="https://github.com/marcuspat">marcuspat</a>
+<a href="https://github.com/adventurewave-labs">adventurewave-labs</a>
+<a href="https://github.com/creandotumatrix-labs">creandotumatrix-labs</a>
+</div>
+<div>© Adventure Wave Labs · static page · free hosting on GitHub Pages</div>
+</footer>
+<script></script>
+</body>
+</html>
