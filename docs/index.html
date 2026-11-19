@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>whose-code-site — Adventure Wave Labs</title>
-<meta name="description" content="Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner. Zero commits classed without a direct confession.">
+<title>whose-code — we scanned ourselves first</title>
+<meta name="description" content="20,245 commits of real agent-built code, audited by our own authorship scanner. The numbers, the method, and what the unknown bucket means.">
 <link rel="canonical" href="https://adventurewave-labs.github.io/whose-code-site/">
-<meta property="og:title" content="whose-code-site">
-<meta property="og:description" content="Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner. Zero commits classed without a direct confession.">
+<meta property="og:title" content="whose-code — we scanned ourselves first">
+<meta property="og:description" content="20,245 commits of real agent-built code, audited by our own authorship scanner. The numbers, the method, and what the unknown bucket means.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://adventurewave-labs.github.io/whose-code-site/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="whose-code-site">
-<meta name="twitter:description" content="Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner. Zero commits classed without a direct confession.">
+<meta name="twitter:title" content="whose-code — we scanned ourselves first">
+<meta name="twitter:description" content="20,245 commits of real agent-built code, audited by our own authorship scanner. The numbers, the method, and what the unknown bucket means.">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='#38bdf8' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='#fbbf24'/%3E%3C/svg%3E">
 <style>
@@ -62,6 +62,14 @@ h2::before{content:'// ';color:var(--mut)}
 .links a{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border:1px solid var(--line);border-radius:11px;font-size:13.5px;background:var(--card);transition:border-color .15s,transform .15s}
 .links a:hover{border-color:var(--a1);transform:translateX(3px)}
 .links a span.arr{color:var(--a1)}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:720px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+thead th{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--mut);background:rgba(255,255,255,.03)}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{font-variant-numeric:tabular-nums;text-align:right}
+section p code{background:rgba(255,255,255,.06);padding:.1rem .3rem;border-radius:3px;font-size:.9em}
+section p a{color:var(--a1)}
 footer{border-top:1px solid var(--line);padding:30px 26px 44px;text-align:center;color:var(--mut);font-size:13px}
 footer .orgs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
 footer a:hover{color:var(--a1)}
@@ -69,8 +77,8 @@ footer a:hover{color:var(--a1)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition:none !important}}
 </style>
 <style>details{border:1px solid var(--line);border-radius:11px;padding:14px 18px;background:var(--card)}details+details{margin-top:10px}summary{cursor:pointer;font-weight:600;font-size:14.5px}summary:hover{color:var(--a1)}details p{margin-top:10px;font-size:13.8px;color:var(--mut)}</style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareSourceCode", "name": "whose-code-site", "description": "Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner. Zero commits classed without a direct confession.", "url": "https://adventurewave-labs.github.io/whose-code-site/", "codeRepository": "https://github.com/adventurewave-labs/whose-code-site", "programmingLanguage": "HTML", "keywords": "agentic-ai, ai-agents, authorship, case-study, code-audit, copyright, developer-tools, git-analytics, html", "author": {"@type": "Organization", "name": "Adventure Wave Labs", "url": "https://github.com/adventurewave-labs"}, "maintainer": {"@type": "Organization", "name": "Adventure Wave Labs", "url": "https://github.com/adventurewave-labs"}, "dateModified": "2026-11-07T17:02:10Z", "version": null, "isAccessibleForFree": true, "license": "https://github.com/adventurewave-labs/whose-code-site/blob/HEAD/LICENSE"}, {"@type": "WebSite", "name": "whose-code-site — Adventure Wave Labs", "url": "https://adventurewave-labs.github.io/whose-code-site/", "publisher": {"@type": "Organization", "name": "Adventure Wave Labs"}}, {"@type": "Organization", "name": "Adventure Wave Labs", "url": "https://github.com/adventurewave-labs", "description": "The lab for agentic developer tooling"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is whose-code-site?", "acceptedAnswer": {"@type": "Answer", "text": "Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner."}}, {"@type": "Question", "name": "Who maintains whose-code-site?", "acceptedAnswer": {"@type": "Answer", "text": "Adventure Wave Labs — The lab for agentic developer tooling. Source code and issues live on GitHub at github.com/adventurewave-labs/whose-code-site."}}, {"@type": "Question", "name": "How do I try whose-code-site?", "acceptedAnswer": {"@type": "Answer", "text": "Clone or fork the repository at github.com/adventurewave-labs/whose-code-site and follow the README setup instructions."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareSourceCode", "name": "whose-code-site", "description": "Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner — no commit classed on indirect evidence alone.", "url": "https://adventurewave-labs.github.io/whose-code-site/", "codeRepository": "https://github.com/adventurewave-labs/whose-code-site", "programmingLanguage": "HTML", "keywords": "agentic-ai, ai-agents, authorship, case-study, code-audit, copyright, developer-tools, git-analytics, html", "author": {"@type": "Organization", "name": "Adventure Wave Labs", "url": "https://github.com/adventurewave-labs"}, "maintainer": {"@type": "Organization", "name": "Adventure Wave Labs", "url": "https://github.com/adventurewave-labs"}, "dateModified": "2026-11-19", "isAccessibleForFree": true}, {"@type": "WebSite", "name": "whose-code — we scanned ourselves first", "url": "https://adventurewave-labs.github.io/whose-code-site/", "publisher": {"@type": "Organization", "name": "Adventure Wave Labs"}}, {"@type": "Organization", "name": "Adventure Wave Labs", "url": "https://github.com/adventurewave-labs", "description": "The lab for agentic developer tooling"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is whose-code?", "acceptedAnswer": {"@type": "Answer", "text": "An authorship scanner for agent-built code. It classifies commits as assisted, machine, or unknown using direct confessions and trail artifacts — never guessed authorship. It is in private beta; pilot invitations go out through the adventurewave-labs GitHub org."}}, {"@type": "Question", "name": "What does the zero mean?", "acceptedAnswer": {"@type": "Answer", "text": "No commit was classified assisted or machine at deciding confidence without a direct confession — on these repos, under this method. It proves indirect signals never decided a class. It is not a general accuracy guarantee."}}, {"@type": "Question", "name": "Where do the numbers come from?", "acceptedAnswer": {"@type": "Answer", "text": "The estate validation run (method v0.2) against three production repositories — turbo-rig, ancuria, and adventure-wave-explorer. The receipt is committed at docs/ESTATE-VALIDATION.md in the private scanner repo."}}]}</script>
 </head>
 <body>
 <header class="nav">
@@ -101,22 +109,60 @@ footer a:hover{color:var(--a1)}
 </svg></div>
 <div class="hero-inner">
   <div class="eyebrow">adventurewave-labs</div>
-  <h1>whose-code-site</h1>
-  <p class="tagline">Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner. Zero commits classed without a direct confession.</p>
+  <h1>We scanned ourselves first.</h1>
+  <p class="tagline">Our own code is written by agent fleets. So before we asked anyone to trust our authorship scanner, we pointed it at every repo we run: <b>20,245 commits</b> of real, shipping, agent-built software — the complete result, published warts and all.</p>
   <div class="chips"><span class="chip">agentic-ai</span><span class="chip">ai-agents</span><span class="chip">authorship</span><span class="chip">case-study</span><span class="chip">code-audit</span><span class="chip">copyright</span><span class="chip">developer-tools</span><span class="chip">git-analytics</span><span class="chip">html</span></div>
-  <div class="cta"><a class="btn primary" href="https://github.com/adventurewave-labs/whose-code-site">View on GitHub ↗</a><a class="btn" href="https://marcuspat.github.io/whose-code-site/">Live demo ↗</a></div>
-  <div class="stats"><span><span class="lang-dot" style="background:#e34c26"></span><b>HTML</b></span><span>⭐ <b>0</b></span><span>pushed <b>2026-11-07</b></span></div>
+  <div class="cta"><a class="btn primary" href="#receipt">Read the receipt ↓</a><a class="btn" href="https://github.com/adventurewave-labs/whose-code-site">Source ↗</a></div>
+  <div class="stats"><span><span class="lang-dot" style="background:#e34c26"></span><b>HTML</b></span><span>method <b>v0.2</b></span><span>last updated <b>November 2026</b></span></div>
 </div>
 </section>
 <main>
-<section id="about"><h2>What it does</h2><div class="cards"><div class="card"><h3>20,245 commits audited</h3><p>Our own agent-built code, run through the authorship scanner — the scanner we sell applied to ourselves.</p></div><div class="card"><h3>Zero commits classed without a confession</h3><p>Every classification traces to a direct confession — no guessed authorship.</p></div><div class="card"><h3>Public case study</h3><p>The full method and results, published so you can argue with the evidence.</p></div></div></section>
+<section id="about"><h2>The receipt, at a glance</h2><div class="cards">
+<div class="card"><h3>20,245</h3><p>commits of our own agent-built code, scanned — every repo we run, warts and all.</p></div>
+<div class="card"><h3>0</h3><p>commits classed on indirect evidence alone. The precise claim is below — it is not "every commit confessed."</p></div>
+<div class="card"><h3>208 / 208</h3><p>merge commits carry review evidence — the human ruling is on record.</p></div>
+<div class="card"><h3>658</h3><p>gate runs on record — the work was gated the same way it ships.</p></div>
+</div></section>
 
-<section id="faq"><h2>FAQ</h2><div class="faq"><details><summary>What is whose-code-site?</summary><p>Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner.</p></details><details><summary>Who maintains whose-code-site?</summary><p>Adventure Wave Labs — The lab for agentic developer tooling. Source code and issues live on GitHub at github.com/adventurewave-labs/whose-code-site.</p></details><details><summary>How do I try whose-code-site?</summary><p>Clone or fork the repository at github.com/adventurewave-labs/whose-code-site and follow the README setup instructions.</p></details></div></section>
+<section id="receipt"><h2>The receipt (method v0.2)</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>repo</th><th class="num">commits</th><th class="num">assisted</th><th class="num">machine</th><th class="num">unknown</th><th class="num">velocity flags</th><th class="num">merges w/ review evidence</th><th class="num">gate runs</th><th class="num">classed w/o confession</th></tr></thead>
+<tbody>
+<tr><td>turbo-rig</td><td class="num">18,282</td><td class="num">0</td><td class="num">0</td><td class="num">18,282</td><td class="num">0</td><td class="num">95 / 95</td><td class="num">370</td><td class="num">0</td></tr>
+<tr><td>ancuria</td><td class="num">1,820</td><td class="num">37</td><td class="num">0</td><td class="num">1,783</td><td class="num">152</td><td class="num">102 / 102</td><td class="num">255</td><td class="num">0</td></tr>
+<tr><td>adventure-wave-explorer</td><td class="num">143</td><td class="num">0</td><td class="num">4</td><td class="num">139</td><td class="num">0</td><td class="num">11 / 11</td><td class="num">33</td><td class="num">0</td></tr>
+</tbody></table></div>
+<p>Generated by the estate validation run against three production repositories; the receipt is committed at <code>docs/ESTATE-VALIDATION.md</code> in the <a href="https://github.com/adventurewave-labs/whose-code">whose-code</a> scanner repo (private, pilot-stage). Educational case study, not legal advice.</p>
+</section>
+
+<section id="numbers">
+<h2>What the numbers actually say</h2>
+<p><b>Ancuria shows what a confession looks like.</b> 37 commits are classified <b>assisted</b> from direct <code>Co-Authored-By: Claude</code> trailers the agent left behind, and the velocity signal flagged 152 commits on days that broke the author's own rhythm. Those are honest fingerprints, counted, not hidden.</p>
+<p><b>Turbo-rig shows the hole the industry is standing over.</b> 18,282 commits and effectively no machine evidence at all, because its history was written before agent tools started signing their work. The scanner says <b>unknown</b> on all of it, and unknown is the truthful answer: a repository without trail artifacts cannot prove anything about who wrote it or who approved it. That is not a defect in the scanner. That is the multi-billion-dollar problem the whole category is about to collide with.</p>
+<p><b>The zero, stated precisely.</b> No commit was classified assisted or machine at deciding confidence unless it carried a direct confession — on our repos, under this method. That is what a zero here can prove: indirect signals never decided a class. It is not a general accuracy guarantee, and the report itself says so.</p>
+</section>
+
+<section id="method">
+<h2>The method</h2>
+<p>Version 0.2, stamped on every report: commit trailers naming known AI identities, bot accounts, review artifacts, and velocity outliers. Classes are <b>assisted / machine / unknown</b>. There is no "human" class by design: a commit message can prove machine involvement, never human authorship. Every record is cross-checked against git's own authoritative history, and anything the scanner cannot read fails the scan instead of guessing.</p>
+<p>The scan itself was gated the same way we gate everything: an independent reviewer, 14 rounds on the scanner, 12 on the validation receipt, every finding fixed with a regression test before a human merged.</p>
+</section>
+
+<section id="why">
+<h2>What this is for</h2>
+<p>Gartner says 70% of enterprises will abandon vendor-built agentic AI by 2028. The reason nobody puts in the forecast: buyers may not own what they paid for, and they cannot prove the human part either. The answer is evidence, produced while the work happens. We built the scanner to audit it, and we built the trail layer to produce it. We ran both on ourselves before showing either to anyone.</p>
+<p><b>whose-code is in private beta.</b> The case study is public; the tool is available to pilot teams, diligence firms, and agencies who need to answer the ownership question before a buyer asks it. Pilot invitations go out through the <a href="https://github.com/adventurewave-labs">adventurewave-labs</a> GitHub org.</p>
+</section>
+
+<section id="faq"><h2>FAQ</h2><div class="faq">
+<details><summary>What is whose-code?</summary><p>An authorship scanner for agent-built code. It classifies commits as assisted, machine, or unknown using direct confessions and trail artifacts — never guessed authorship. It is in private beta; pilot invitations go out through the adventurewave-labs GitHub org.</p></details>
+<details><summary>What does the zero mean?</summary><p>No commit was classified assisted or machine at deciding confidence without a direct confession — on these repos, under this method. It proves indirect signals never decided a class. It is not a general accuracy guarantee.</p></details>
+<details><summary>Where do the numbers come from?</summary><p>The estate validation run (method v0.2) against three production repositories — turbo-rig, ancuria, and adventure-wave-explorer. The receipt is committed at docs/ESTATE-VALIDATION.md in the private scanner repo.</p></details>
+</div></section>
 <section id="more"><h2>Explore</h2><div class="links">
 <a href="https://github.com/adventurewave-labs/whose-code-site#readme">README <span class="arr">→</span></a>
-<a href="https://github.com/adventurewave-labs/whose-code-site/releases">Releases <span class="arr">→</span></a>
 <a href="https://github.com/adventurewave-labs/whose-code-site/issues">Issues <span class="arr">→</span></a>
-<a href="https://github.com/adventurewave-labs/whose-code-site/blob/HEAD/LICENSE">License <span class="arr">→</span></a>
+<a href="https://github.com/adventurewave-labs/whose-code">whose-code scanner <span class="arr">→</span></a>
 </div></section>
 </main>
 <footer>
