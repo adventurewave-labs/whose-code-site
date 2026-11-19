@@ -1,10 +1,28 @@
 # whose-code-site
 
-> Public case study for whose-code: 20,245 commits of our own agent-built code audited by our authorship scanner. Zero commits classed without a direct confession.
+> Public case study for whose-code: we scanned 20,245 commits of our own agent-built code with our authorship scanner and published the complete result, warts and all.
 
 whose-code-site is maintained by Adventure Wave Labs (The lab for agentic developer tooling).
 
+## The receipt (method v0.2)
+
+| repo | commits | assisted | machine | unknown | velocity flags | merges w/ review evidence | gate runs | classed w/o confession |
+|---|---|---|---|---|---|---|---|---|
+| turbo-rig | 18,282 | 0 | 0 | 18,282 | 0 | 95 / 95 | 370 | 0 |
+| ancuria | 1,820 | 37 | 0 | 1,783 | 152 | 102 / 102 | 255 | 0 |
+| adventure-wave-explorer | 143 | 0 | 4 | 139 | 0 | 11 / 11 | 33 | 0 |
+
+## The zero, stated precisely
+
+No commit was classified assisted or machine at deciding confidence without a
+direct confession — on these repos, under this method. That is what the zero
+can prove: indirect signals never decided a class. It is not a general
+accuracy guarantee. Classes are assisted / machine / unknown; there is no
+"human" class by design — commit messages can prove machine involvement, never
+human authorship.
+
 ## Links
 
-- [Landing page](https://adventurewave-labs.github.io/whose-code-site/): overview, features, FAQ
-- [Source code](https://github.com/adventurewave-labs/whose-code-site): README, issues, releases
+- [Case study](https://adventurewave-labs.github.io/whose-code-site/): the receipt table, the method, and what the unknown bucket means
+- [Source code](https://github.com/adventurewave-labs/whose-code-site): README, issues
+- [whose-code scanner](https://github.com/adventurewave-labs/whose-code): the scanner itself (private, pilot-stage); receipt at docs/ESTATE-VALIDATION.md
