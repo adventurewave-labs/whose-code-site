@@ -1,16 +1,18 @@
 # whose-code-site
 
-> Public case study for whose-code: we scanned 20,245 commits of our own agent-built code with our authorship scanner and published the complete result, warts and all.
+> Public case study for whose-code: we scanned 34,012 commits of our own agent-built code with our authorship scanner and published the complete result, warts and all — including a disclosed correction after we found and fixed the scanner's own blind spot.
 
 whose-code-site is maintained by Adventure Wave Labs (The lab for agentic developer tooling).
 
-## The receipt (method v0.2)
+## The receipt (method v0.2, re-cut 2026-11-19)
 
 | repo | commits | assisted | machine | unknown | velocity flags | merges w/ review evidence | gate runs | classed w/o confession |
 |---|---|---|---|---|---|---|---|---|
-| turbo-rig | 18,282 | 0 | 0 | 18,282 | 0 | 95 / 95 | 370 | 0 |
-| ancuria | 1,820 | 37 | 0 | 1,783 | 152 | 102 / 102 | 255 | 0 |
-| adventure-wave-explorer | 143 | 0 | 4 | 139 | 0 | 11 / 11 | 33 | 0 |
+| turbo-rig | 31,967 | 13 | 0 | 31,954 | 0 | 132 / 132 | 743 | 0 |
+| ancuria | 1,893 | 614 | 0 | 1,279 | 152 | 102 / 102 | 692 | 0 |
+| adventure-wave-explorer | 152 | 0 | 4 | 148 | 0 | 11 / 11 | 64 | 0 |
+
+Correction, disclosed: the Nov 7 receipt showed 0 assisted on turbo-rig and 37 on ancuria. The scanner's identity rules could not match real agent trailers (model-suffixed names like "Claude Opus 5.5", lab identities like "zcode"). Found by dogfooding, fixed through the same public review gate, receipt re-cut.
 
 ## The zero, stated precisely
 
