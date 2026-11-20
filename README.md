@@ -1,26 +1,32 @@
 # whose-code-site
 
 The public case study for [whose-code](https://github.com/adventurewave-labs/whose-code),
-our authorship scanner: **we scanned 20,245 commits of our own agent-built code
-and published the complete result**, warts and all.
+our authorship scanner: **we scanned 34,012 commits of our own agent-built code
+and published the complete result**, warts and all — including a disclosed
+correction after dogfooding found our scanner's own blind spot.
 
 The live page is `docs/index.html` — a single static file, no build step, no
 framework — served by GitHub Pages from this repo's `/docs` directory on the
 `build/case-study` branch. The root `index.html` is a redirect shim pointing at
 the Pages URL, kept so any old deploy target forwards instead of going dark.
 
-## The receipt (method v0.2)
+## The receipt (method v0.2, re-cut 2026-11-19)
 
 | repo | commits | assisted | machine | unknown | velocity flags | merges w/ review evidence | gate runs | classed w/o confession |
 |---|---|---|---|---|---|---|---|---|
-| turbo-rig | 18,282 | 0 | 0 | 18,282 | 0 | 95 / 95 | 370 | 0 |
-| ancuria | 1,820 | 37 | 0 | 1,783 | 152 | 102 / 102 | 255 | 0 |
-| adventure-wave-explorer | 143 | 0 | 4 | 139 | 0 | 11 / 11 | 33 | 0 |
+| turbo-rig | 31,967 | 13 | 0 | 31,954 | 0 | 132 / 132 | 743 | 0 |
+| ancuria | 1,893 | 614 | 0 | 1,279 | 152 | 102 / 102 | 692 | 0 |
+| adventure-wave-explorer | 152 | 0 | 4 | 148 | 0 | 11 / 11 | 64 | 0 |
 
 What the zero means, precisely: no commit was classified assisted or machine at
 deciding confidence without a direct confession (trailer or bot account) on
 these repos, under this method. It proves indirect signals never decided a
 class. It is not a general accuracy guarantee.
+
+Correction, disclosed: the Nov 7 receipt showed 0 assisted on turbo-rig and 37
+on ancuria. The scanner's identity rules could not match real agent trailers
+(model-suffixed names like "Claude Opus 5.5", lab identities like "zcode").
+Found by dogfooding, fixed through the same public review gate, receipt re-cut.
 
 ## The law the scanner obeys
 
